@@ -1,0 +1,59 @@
+/* ================================================
+   ABOUT PAGE
+   ================================================ */
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+.about-stat-item h2 {
+  color: #f26522;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-bottom: 6px;
+}
+
+.about-stat-item p {
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.about-why-box {
+  background: #fff;
+  padding: 36px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* ================================================
+   RESPONSIVE — TABLET (≤ 1024px)
+   ================================================ */
+@media (max-width: 1024px) {
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+/* ================================================
+   RESPONSIVE — MOBILE BREAKPOINT (≤ 860px)
+   ================================================ */
+@media (max-width: 860px) {
+  .about-story-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-why-box { padding: 24px; }
+}
+
+/* ================================================
+   RESPONSIVE — SMALL MOBILE (≤ 640px)
+   ================================================ */
+@media (max-width: 640px) {
+  .about-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}

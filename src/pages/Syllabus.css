@@ -1,0 +1,349 @@
+/* Centralized shared styles removed (moved to App.css) */
+
+/* ================================================
+   SYLLABUS PAGE HELPERS
+   ================================================ */
+
+.syllabus-pricing-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.syllabus-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ================================================
+   COURSE CARDS — Syllabus Page
+   ================================================ */
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Each card is a flex column so footer always sticks to bottom */
+.course-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+}
+
+/* ── Image wrapper ── */
+.course-card__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* 16:9 consistent ratio */
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.course-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.course-card:hover .course-card__img {
+  transform: scale(1.04);
+}
+
+/* Placeholder shown when image is missing */
+.course-card__placeholder {
+  display: none;            /* JS shows this on img error */
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.85);
+}
+
+.course-card__placeholder-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.course-card__placeholder-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Badge overlay on top-left of image */
+.course-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+/* ── Card body ── */
+.course-card__body {
+  padding: 22px 22px 16px;
+  flex: 1;                   /* grows to push footer down */
+}
+
+.course-card__title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.course-card__desc {
+  font-size: 0.83rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  margin-bottom: 14px;
+}
+
+/* Highlights list */
+.course-card__highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.course-card__highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  font-size: 0.8rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+.course-card__check {
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 0.78rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Card footer ── */
+.course-card__footer {
+  padding: 14px 22px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-top: 1px solid var(--border);
+  background: #fafafa;
+}
+
+.course-card__btn {
+  background: var(--orange);
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 9px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.course-card__btn:hover {
+  background: var(--orange-dark);
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: #fff;
+}
+
+.course-card__learn {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--teal);
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.course-card__learn:hover {
+  color: var(--orange);
+  text-decoration: none;
+}
+
+/* Pricing cards styling */
+.pricing-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  color: var(--text-dark);
+  text-align: center;
+  outline: none;
+  outline-offset: 0;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              outline 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Same hover scale and translateY transform offset for all cards */
+.pricing-card:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+/* Pseudo-element for smooth background gradient/color fade */
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 11px;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.pricing-card:hover::before {
+  opacity: 1;
+}
+
+/* Standard cards hover (Monthly & Extended) → warm cream background */
+.pricing-card--standard::before {
+  background: #fef3e8;
+}
+
+.pricing-card--standard:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Annual card hover → light teal gradient background for perfect readability of dark text */
+.pricing-card--annual::before {
+  background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+}
+
+.pricing-card--annual:hover {
+  box-shadow: 0 12px 32px rgba(0, 150, 136, 0.2);
+  border-color: #b2dfdb;
+  outline: 2px solid #009688;
+  outline-offset: 2px;
+}
+
+/* Checkmarks styling */
+.pricing-card__check {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+/* Enroll Button styling */
+.pricing-card__btn {
+  display: block;
+  background: rgba(0, 150, 136, 0.1);
+  color: #00695c;
+  border-radius: 999px;
+  padding: 9px 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  min-height: 40px;
+  line-height: 22px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pricing-card__btn:hover {
+  background: rgba(0, 150, 136, 0.2);
+  text-decoration: none;
+}
+
+/* ================================================
+   RESPONSIVE — TABLET (≤ 1024px)
+   ================================================ */
+@media (max-width: 1024px) {
+  .syllabus-plans-grid { grid-template-columns: repeat(3, 1fr); }
+  .courses-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+}
+
+/* ================================================
+   RESPONSIVE — MOBILE BREAKPOINT (≤ 860px)
+   ================================================ */
+@media (max-width: 860px) {
+  .syllabus-pricing-faq-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ================================================
+   RESPONSIVE — SMALL MOBILE (≤ 640px)
+   ================================================ */
+@media (max-width: 640px) {
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+  .syllabus-plans-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.cta-btn-primary {
+  background: #fff;
+  color: var(--orange);
+}
+
+.cta-btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.cta-btn-secondary {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.cta-btn-secondary:hover {
+  background: rgba(255,255,255,0.15);
+}
