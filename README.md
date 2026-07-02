@@ -1,16 +1,102 @@
-# React + Vite
+# 🎓 Suyash Classes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official website for **Suyash Classes**, an educational institute offering coaching for school academics and competitive entrance examinations.
 
-Currently, two official plugins are available:
+> Developed by **Kaevron Technologies**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🌐 **Live Website:** https://suyashclasses.online
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📌 Overview
 
-## Expanding the ESLint configuration
+Suyash Classes has been providing quality education since 1995, helping students prepare for board examinations and competitive entrance exams like MHT-CET, JEE Main, and NEET. This project delivers a modern, responsive, and user-friendly web presence that enhances the institute's digital identity and streamlines access to course information and admissions.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- Responsive design for all devices
+- Modern landing page
+- About institute section
+- Courses & Programs
+- Gallery
+- Student testimonials
+- Blog
+- Online courses
+- Contact & admission inquiry
+- SEO-friendly structure
+- Fast loading performance
+
+---
+
+## 📚 Courses Covered
+
+- 11th Science
+- 12th Science
+- MHT-CET
+- JEE Main
+- NEET
+- 1st–10th Standard
+- Scholarship (5th & 8th)
+
+---
+
+## 🛠 Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap
+- Responsive Web Design
+
+---
+
+## 📂 Project Structure
+
+```
+.
+├── index.html
+├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   └── fonts/
+├── pages/
+└── README.md
+```
+
+---
+
+## 🚀 Highlights
+
+- Mobile-first design
+- Clean UI/UX
+- Optimized performance
+- Easy navigation
+- Modern educational branding
+- Cross-browser compatibility
+
+---
+
+## 🌐 Live Demo
+
+https://suyashclasses.online
+
+---
+
+## 👨‍💻 Developed By
+
+### Kaevron Technologies
+
+This website was designed and developed by **Kaevron Technologies** as a custom web solution for **Suyash Classes**.
+
+Our focus was on creating a fast, responsive, and professional digital platform that reflects the institute's reputation while improving user experience across all devices.
+
+---
+
+## 📄 License
+
+This repository contains the source code for the official website of **Suyash Classes**.
+
+© Kaevron Technologies. All rights reserved.
