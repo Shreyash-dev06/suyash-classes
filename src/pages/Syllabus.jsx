@@ -107,35 +107,6 @@ const faqs = [
   },
 ];
 
-const plans = [
-  {
-    label: "Monthly",
-    price: "₹2,000",
-    period: "/month",
-    features: ["Weekly Tests", "Printed Notes", "Doubt Sessions"],
-    featured: false,
-  },
-  {
-    label: "Annual",
-    price: "₹18,000",
-    period: "/year",
-    features: [
-      "Guided Learning",
-      "All Printed Notes",
-      "Mock Tests",
-      "Flexible Batch Timing",
-      "Completion Certificate",
-    ],
-    featured: true,
-  },
-  {
-    label: "Extended",
-    price: "₹5,000",
-    period: "/month",
-    features: ["Priority Access", "1-on-1 Mentoring"],
-    featured: false,
-  },
-];
 
 // Animation variants
 const fadeInUp = {
@@ -297,7 +268,7 @@ function Syllabus() {
             </div>
           </div>
         </motion.section>
-        {/* ── Pricing & FAQ ── */}
+
         <motion.section
           className="section"
           style={{ background: "#fff" }}
@@ -307,215 +278,82 @@ function Syllabus() {
           variants={fadeInUp}
         >
           <div className="container">
-          <div className="syllabus-pricing-faq-grid">
+            <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+              <div className="section-badge">❓ Have Questions?</div>
+              <h2
+                style={{
+                  fontSize: "clamp(1.5rem, 2.6vw, 2rem)",
+                  fontWeight: 800,
+                  color: "var(--text-dark)",
+                  marginTop: 8,
+                  marginBottom: 28,
+                }}
+              >
+                FAQs
+              </h2>
 
-              {/* Pricing */}
-              <div>
-                <div className="section-badge">💳 Membership</div>
-                <h2
-                  style={{
-                    fontSize: "clamp(1.5rem, 2.6vw, 2rem)",
-                    fontWeight: 800,
-                    color: "var(--text-dark)",
-                    marginTop: 8,
-                    marginBottom: 12,
-                  }}
-                >
-                  Membership Plans
-                </h2>
-                <p
-                  style={{
-                    color: "var(--text-light)",
-                    lineHeight: 1.75,
-                    fontSize: "0.93rem",
-                    marginBottom: 32,
-                  }}
-                >
-                  Choose the plan that suits you best. All plans include access
-                  to notes, tests, and personal mentoring.
-                </p>
-
-                <motion.div
-                  className="syllabus-plans-grid"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                  variants={staggerContainer}
-                >
-                  {plans.map((plan, i) => (
-                    <motion.div
-                      key={i}
-                      variants={fadeInUp}
-                      className={`pricing-card ${
-                        plan.featured ? "pricing-card--annual" : "pricing-card--standard"
-                      }`}
-                    >
-                      {plan.featured && (
-                        <div
-                          style={{
-                            position: "absolute",
-                            top: -10,
-                            left: "50%",
-                            transform: "translateX(-50%)",
-                            background: "var(--orange)",
-                            color: "white",
-                            borderRadius: 999,
-                            padding: "2px 12px",
-                            fontSize: "0.65rem",
-                            fontWeight: 700,
-                            whiteSpace: "nowrap",
-                            zIndex: 2,
-                          }}
-                        >
-                          POPULAR
-                        </div>
-                      )}
-                      <div style={{ position: "relative", zIndex: 1 }}>
-                        <div
-                          style={{
-                            fontSize: "0.72rem",
-                            fontWeight: 700,
-                            textTransform: "uppercase",
-                            letterSpacing: "0.08em",
-                            opacity: 0.7,
-                            marginBottom: 8,
-                            marginTop: plan.featured ? 8 : 0,
-                          }}
-                        >
-                          {plan.label}
-                        </div>
-                        <div
-                          style={{
-                            fontSize: "1.7rem",
-                            fontWeight: 900,
-                            marginBottom: 2,
-                          }}
-                        >
-                          {plan.price}
-                        </div>
-                        <div
-                          style={{
-                            fontSize: "0.72rem",
-                            opacity: 0.65,
-                            marginBottom: 18,
-                          }}
-                        >
-                          {plan.period}
-                        </div>
-                        <div
-                          style={{
-                            display: "flex",
-                            flexDirection: "column",
-                            alignItems: "flex-start",
-                            width: "fit-content",
-                            margin: "0 auto 18px",
-                            gap: 6,
-                            textAlign: "left",
-                          }}
-                        >
-                          {plan.features.map((f, j) => (
-                            <div
-                              key={j}
-                              style={{
-                                display: "flex",
-                                alignItems: "center",
-                                gap: 6,
-                                fontSize: "0.78rem",
-                                opacity: 0.9,
-                              }}
-                            >
-                              <span className="pricing-card__check">✓</span>{" "}
-                              {f}
-                            </div>
-                          ))}
-                        </div>
-                        <Link to="/contact" className="pricing-card__btn">
-                          Enroll Now
-                        </Link>
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </div>
-
-              {/* FAQ */}
-              <div>
-                <div className="section-badge">❓ Have Questions?</div>
-                <h2
-                  style={{
-                    fontSize: "clamp(1.5rem, 2.6vw, 2rem)",
-                    fontWeight: 800,
-                    color: "var(--text-dark)",
-                    marginTop: 8,
-                    marginBottom: 28,
-                  }}
-                >
-                  FAQs
-                </h2>
-
-                <div
-                  style={{ display: "flex", flexDirection: "column", gap: 0 }}
-                >
-                  {faqs.map((faq, i) => (
-                    <div
-                      key={i}
+              <div
+                style={{ display: "flex", flexDirection: "column", gap: 0 }}
+              >
+                {faqs.map((faq, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      border: "1px solid var(--border)",
+                      borderRadius: 8,
+                      marginBottom: 10,
+                      overflow: "hidden",
+                      background: "#fff",
+                    }}
+                  >
+                    <button
+                      onClick={() =>
+                        setOpenFaq(openFaq === i ? null : i)
+                      }
+                      aria-expanded={openFaq === i}
                       style={{
-                        border: "1px solid var(--border)",
-                        borderRadius: 8,
-                        marginBottom: 10,
-                        overflow: "hidden",
-                        background: "#fff",
+                        width: "100%",
+                        textAlign: "left",
+                        background: "none",
+                        border: "none",
+                        padding: "16px 18px",
+                        cursor: "pointer",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        fontFamily: "var(--font)",
+                        fontWeight: 600,
+                        fontSize: "0.9rem",
+                        color: "var(--text-dark)",
+                        gap: 12,
+                        minHeight: 52,
                       }}
                     >
-                      <button
-                        onClick={() =>
-                          setOpenFaq(openFaq === i ? null : i)
-                        }
-                        aria-expanded={openFaq === i}
+                      <span>{faq.q}</span>
+                      <span
                         style={{
-                          width: "100%",
-                          textAlign: "left",
-                          background: "none",
-                          border: "none",
-                          padding: "16px 18px",
-                          cursor: "pointer",
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                          fontFamily: "var(--font)",
-                          fontWeight: 600,
-                          fontSize: "0.9rem",
-                          color: "var(--text-dark)",
-                          gap: 12,
-                          minHeight: 52,
+                          color: "var(--teal)",
+                          fontSize: "1.2rem",
+                          flexShrink: 0,
                         }}
                       >
-                        <span>{faq.q}</span>
-                        <span
-                          style={{
-                            color: "var(--teal)",
-                            fontSize: "1.2rem",
-                            flexShrink: 0,
-                          }}
-                        >
-                          {openFaq === i ? "−" : "+"}
-                        </span>
-                      </button>
-                      {openFaq === i && (
-                        <div
-                          style={{
-                            padding: "0 18px 16px",
-                            fontSize: "0.87rem",
-                            color: "var(--text-light)",
-                            lineHeight: 1.75,
-                          }}
-                        >
-                          {faq.a}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                        {openFaq === i ? "−" : "+"}
+                      </span>
+                    </button>
+                    {openFaq === i && (
+                      <div
+                        style={{
+                          padding: "0 18px 16px",
+                          fontSize: "0.87rem",
+                          color: "var(--text-light)",
+                          lineHeight: 1.75,
+                        }}
+                      >
+                        {faq.a}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
           </div>

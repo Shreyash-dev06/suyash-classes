@@ -115,5 +115,40 @@
   .contact-card { padding: 20px 16px; }
   .form-row.split { grid-template-columns: 1fr; }
   .contact-card-inner { gap: 32px; }
+  
+}
 
+.contact-social-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.contact-social-icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--off-white, #f8f9fa);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.contact-social-icon-btn:hover {
+  transform: scale(1.1);
+  background: #fef3e8;
+  color: var(--orange);
+  border-color: var(--orange);
+}
+
+@media (max-width: 767px) {
+  .contact-social-row {
+    justify-content: center;
+  }
 }

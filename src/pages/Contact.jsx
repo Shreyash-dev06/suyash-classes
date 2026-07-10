@@ -1,10 +1,44 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion"; // <-- NEW import
 import * as XLSX from "xlsx";
+import { FaEnvelope, FaFacebook, FaWhatsapp, FaInstagram, FaPhone } from "react-icons/fa";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import PageTransition from "../components/PageTransition";
 import "./Contact.css";
+
+const communicationChannels = [
+  {
+    name: "Email",
+    icon: <FaEnvelope />,
+    url: "mailto:suyashclasseswadala@gmail.com",
+    isExternal: false,
+  },
+  {
+    name: "Facebook",
+    icon: <FaFacebook />,
+    url: "https://www.facebook.com/profile.php?id=61591699252858",
+    isExternal: true,
+  },
+  {
+    name: "WhatsApp",
+    icon: <FaWhatsapp />,
+    url: "https://wa.me/919987714003",
+    isExternal: true,
+  },
+  {
+    name: "Instagram",
+    icon: <FaInstagram />,
+    url: "https://www.instagram.com/Suyash_classes_wadala",
+    isExternal: true,
+  },
+  {
+    name: "Phone",
+    icon: <FaPhone />,
+    url: "tel:+919987714003",
+    isExternal: false,
+  },
+];
 
 const STORAGE_KEY = "suyash-classes-consultations";
 const inquiryOptions = [
@@ -207,17 +241,19 @@ function Contact() {
               {/* Keep in touch social row */}
               <div style={{ marginBottom: 28 }}>
                 <div style={{ fontSize: "0.78rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-light)", marginBottom: 12 }}>Keep in Touch</div>
-                <div style={{ display: "flex", gap: 10 }}>
-                  {["📘", "🐦", "💼", "📸", "▶️"].map((icon, i) => (
-                    <div
+                <div className="contact-social-row">
+                  {communicationChannels.map((channel, i) => (
+                    <a
                       key={i}
-                      style={{
-                        width: 36, height: 36, borderRadius: "50%",
-                        background: "var(--off-white)", border: "1px solid var(--border)",
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        fontSize: "0.9rem", cursor: "pointer", transition: "all 0.2s",
-                      }}
-                    >{icon}</div>
+                      href={channel.url}
+                      target={channel.isExternal ? "_blank" : undefined}
+                      rel={channel.isExternal ? "noopener noreferrer" : undefined}
+                      title={channel.name}
+                      aria-label={channel.name}
+                      className="contact-social-icon-btn"
+                    >
+                      {channel.icon}
+                    </a>
                   ))}
                 </div>
               </div>

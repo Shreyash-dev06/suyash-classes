@@ -472,48 +472,6 @@ function Home() {
           </div>
         </motion.section>
 
-        {/* ── CONTACT + LOCATION ── */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          style={{ background: "#1a1a2e", padding: "52px 0" }}
-        >
-          <div className="container home-contact-grid">
-            <div>
-              <p style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", color: "#f26522", marginBottom: 10 }}>Find Us</p>
-              <h2 style={{ fontSize: "clamp(1.3rem,2.2vw,1.7rem)", fontWeight: 800, color: "#fff", marginBottom: 16, lineHeight: 1.3 }}>Come visit us in Wadala</h2>
-              <p style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.85, marginBottom: 24 }}>
-                Ground Floor, Shree Dattasai Tower,<br />Near Wadala Post Office,<br />Wadala West, Mumbai 400 033
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {[
-                  ["📞", "9987714003 / 8451011123 / 7208581418"],
-                  ["📧", "suyashclasseswadala@gmail.com"],
-                  ["📸", "@Suyash_classes_wadala"],
-                ].map(([icon, text]) => (
-                  <div key={text} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: "0.87rem", color: "rgba(255,255,255,0.65)" }}>
-                    <span>{icon}</span><span>{text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div style={{ textAlign: "center" }}>
-              <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.93rem", lineHeight: 1.85, marginBottom: 24 }}>
-                New academic year enrollments are open. Seats fill up fast — don't wait.
-              </p>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link to="/contact" style={{ display: "inline-block", background: "#f26522", color: "#fff", padding: "14px 36px", borderRadius: 6, fontWeight: 700, fontSize: "1rem", textDecoration: "none" }}>
-                  Book a Free Consultation
-                </Link>
-              </motion.div>
-              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.78rem", marginTop: 12 }}>
-                Or call us directly — we'll guide you through enrollment.
-              </p>
-            </div>
-          </div>
-        </motion.section>
 
         <Footer />
       </div>
